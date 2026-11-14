@@ -9,9 +9,15 @@ When spawning subagents via the Agent tool, always pass the `model` parameter ex
 
 This applies to every `Agent` tool call regardless of the `subagent_type`, and overrides the agent definition's default model.
 
-## Running tests
+## Automated checks
 
-Never run more than one test file at a time. Pass a single spec file path to the test command (for example `pnpm exec nx test <project> --testFile=<path>`); never run a whole project's suite, a directory, or a glob that matches several files.
+These rules apply to every AI agent working in this environment.
+
+- Run automated checks sequentially. Wait for each command to finish before starting the next. Never overlap checks through parallel tool calls, background processes, task runners, or delegated agents.
+- Run file-based checks, including unit, integration, and end-to-end tests, one file per command. Pass the exact file path. Never combine multiple files or run an entire directory, suite, or glob that selects multiple files.
+- Run type checking one application at a time, or one library at a time when the library has its own typecheck target. Never combine multiple projects in one invocation.
+- Run other project-wide checks that cannot target a single file one project at a time.
+- Select only the checks relevant to the change. If a command cannot respect these limits, explain the limitation before running it and ask the user how to proceed.
 
 ## Git worktrees
 
