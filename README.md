@@ -12,3 +12,4 @@ Repository of instructions and skills for software development assistants such a
 - [agent-browser](https://github.com/vercel-labs/agent-browser)
 - [codegraph](https://github.com/colbymchenry/codegraph)
 - [ponytail](https://github.com/DietrichGebert/ponytail)
+- [unslop](https://github.com/theclaymethod/unslop)

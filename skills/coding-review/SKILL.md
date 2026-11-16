@@ -79,7 +79,7 @@ Build an applicability checklist from the repository's written instructions and 
 - When proposing an implementation order for a feature spanning frontend and backend, prefer frontend first, followed by backend and database changes, where feasible.
 - Run tests sequentially, one explicit test file per invocation. Never run multiple test files concurrently, a whole suite, a directory, or a glob matching multiple files.
 
-For meaningful behavior changes, identify realistic regressions and inspect whether the appropriate tests protect them. Report coverage gaps only with a concrete unprotected behavior and consequence. Check changed comments, documentation, messages, and labels for accuracy against the resulting behavior.
+For meaningful behavior changes, identify realistic regressions and inspect whether the appropriate tests protect them. Report coverage gaps only with a concrete unprotected behavior and consequence. Use the [fix-comments](../fix-comments/SKILL.md) skill in review mode against the exact reviewed revision for changed comments and documentation, incorporating substantiated findings into this review without editing files. Check changed messages and labels for accuracy against the resulting behavior.
 
 ## Synthesis and fix scrutiny
 
