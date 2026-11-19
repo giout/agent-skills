@@ -13,3 +13,4 @@ Repository of instructions and skills for software development assistants such a
 - [codegraph](https://github.com/colbymchenry/codegraph)
 - [ponytail](https://github.com/DietrichGebert/ponytail)
 - [unslop](https://github.com/theclaymethod/unslop)
+- [grill-me](https://www-aihero-dev.translate.goog/skills-grill-me?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc&_x_tr_hist=true)

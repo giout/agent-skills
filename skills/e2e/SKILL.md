@@ -5,7 +5,7 @@ description: Plan and run essential manual regression tests for a specified bran
 
 # End-to-End Verification
 
-Use `[BRANCH]` as the target branch and `[BASE]` as the base branch. The application stack is already running. Analyze the target branch changes against `[BASE]`, prepare a list of essential manual tests, and execute the relevant application workflows to check for regressions.
+Use `[BRANCH]` as the target branch and `[BASE]` as the base branch, with defaults defined by [test-plan](../test-plan/SKILL.md). Use `[IMPLEMENTATION_PLAN]` from the user or conversation when available. The application stack is already running. Analyze the target branch changes against `[BASE]`, prepare a list of essential manual tests, and execute the relevant application workflows to check for regressions.
 
 ## Third-party Skills
 
@@ -13,8 +13,8 @@ Use `[BRANCH]` as the target branch and `[BASE]` as the base branch. The applica
 
 ## Workflow
 
-1. Resolve `[BRANCH]` and `[BASE]` to commit SHAs and compute their merge base. Inspect `git diff <merge-base> <branch-sha>` and the affected application flows. Confirm that the running stack serves the target branch's code before testing; report a mismatch as a blocker rather than testing another branch or restarting the stack without authorization.
-2. List the essential manual tests for changed behavior and closely related regression paths. Include expected outcomes.
+1. Use the [test-plan](../test-plan/SKILL.md) skill with `[IMPLEMENTATION_PLAN]`, `[BRANCH]`, and `[BASE]` to prepare essential manual end-to-end tests for the intended outcome and related regressions. If no implementation plan is available, supply a summary of the changed behavior grounded in the branch diff and available requirements, distinguish inferred intent from explicit requirements, and clarify any uncertainty that prevents defining expected outcomes.
+2. Confirm that the running stack serves the target branch's code before testing; report a mismatch as a blocker rather than testing another branch or restarting the stack without authorization. Check the generated test plan's prerequisites against the running environment.
 3. Run the applicable tests in the web application using the installed `agent-browser` skill. Record actual outcomes and any blockers.
 4. Report the tests performed, their results, and any failures with reproduction steps. Distinguish failed tests from tests that could not be executed.
 
